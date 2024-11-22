@@ -1,0 +1,107 @@
+/* Modern Terminal Design */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Courier New', monospace;
+    background: linear-gradient(120deg, #1a1a1a, #121212);
+    color: #d1d5db;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.terminal {
+    width: 90%;
+    max-width: 800px;
+    height: 80vh;
+    background: #222222;
+    border-radius: 10px;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.terminal-header {
+    background: #333333;
+    padding: 10px 15px;
+    color: #f3f4f6;
+    font-size: 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.terminal-header .buttons {
+    display: flex;
+    gap: 8px;
+}
+
+.terminal-header .button {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #ff5f57;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.terminal-header .button:nth-child(2) {
+    background: #ffbd2e;
+}
+
+.terminal-header .button:nth-child(3) {
+    background: #28c940;
+}
+
+.terminal-header .button:hover {
+    filter: brightness(1.2);
+}
+
+.terminal-body {
+    padding: 20px;
+    overflow-y: auto;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.line {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.line .prompt {
+    color: #9ca3af;
+    margin-right: 5px;
+}
+
+.line .command {
+    color: #f3f4f6;
+}
+
+.line .output {
+    color: #10b981;
+}
+
+.line .error {
+    color: #ef4444;
+}
+
+.cursor {
+    width: 10px;
+    height: 20px;
+    background: #f3f4f6;
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0%, 50% {
+        opacity: 1;
+    }
+    51%, 100% {
+        opacity: 0;
+    }
+  }
