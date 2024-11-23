@@ -1,0 +1,116 @@
+/* Animation 1: Neon Pulse Glow */
+@keyframes neonPulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 10px rgba(0, 255, 163, 0.5), 0 0 20px rgba(0, 120, 255, 0.4);
+  }
+  50% {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px rgba(0, 255, 163, 0.7), 0 0 40px rgba(0, 120, 255, 0.6);
+  }
+}
+
+.neon-glow {
+  width: 200px;
+  height: 200px;
+  background: linear-gradient(45deg, #00ffa3, #0078ff);
+  border-radius: 20px;
+  animation: neonPulse 3s infinite ease-in-out;
+}
+
+/* Animation 2: Rotating Gradient */
+@keyframes rotateGradient {
+  0% {
+    background: conic-gradient(from 0deg, #ff007a, #00d1ff, #ff007a);
+  }
+  100% {
+    background: conic-gradient(from 360deg, #ff007a, #00d1ff, #ff007a);
+  }
+}
+
+.rotating-gradient {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  animation: rotateGradient 4s linear infinite;
+}
+
+/* Animation 3: Wave Ripple Effect */
+@keyframes waveRipple {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(3);
+    opacity: 0;
+  }
+}
+
+.wave {
+  width: 100px;
+  height: 100px;
+  border: 3px solid #0078ff;
+  border-radius: 50%;
+  position: relative;
+  animation: waveRipple 2s infinite ease-out;
+}
+
+/* Animation 4: Bouncing Glow */
+@keyframes bounceGlow {
+  0%, 100% {
+    transform: translateY(0);
+    box-shadow: 0 0 15px #ff007a, 0 0 30px #00d1ff;
+  }
+  50% {
+    transform: translateY(-20px);
+    box-shadow: 0 0 30px #ff007a, 0 0 60px #00d1ff;
+  }
+}
+
+.bouncing {
+  width: 100px;
+  height: 100px;
+  background: linear-gradient(45deg, #ff007a, #00d1ff);
+  border-radius: 50%;
+  animation: bounceGlow 1.5s infinite ease-in-out;
+}
+
+/* Animation 5: Rotating Cube */
+@keyframes rotateCube {
+  0% {
+    transform: rotateX(0deg) rotateY(0deg);
+  }
+  100% {
+    transform: rotateX(360deg) rotateY(360deg);
+  }
+}
+
+.rotating-cube {
+  width: 100px;
+  height: 100px;
+  background: linear-gradient(45deg, #00ffa3, #ff007a);
+  transform-style: preserve-3d;
+  animation: rotateCube 4s linear infinite;
+}
+
+/* Animation 6: Expanding Glow Rings */
+@keyframes glowRings {
+  0% {
+    box-shadow: 0 0 5px #00ffa3, 0 0 10px #00ffa3, 0 0 20px #0078ff;
+  }
+  50% {
+    box-shadow: 0 0 10px #00ffa3, 0 0 20px #0078ff, 0 0 40px #ff007a;
+  }
+  100% {
+    box-shadow: 0 0 5px #00ffa3, 0 0 10px #00ffa3, 0 0 20px #0078ff;
+  }
+}
+
+.glow-ring {
+  width: 150px;
+  height: 150px;
+  background: transparent;
+  border-radius: 50%;
+  animation: glowRings 2.5s infinite ease-in-out;
+}
