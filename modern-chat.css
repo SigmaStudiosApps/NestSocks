@@ -1,4 +1,4 @@
-/* Chat App Design - NestSocks */
+/* Chat App Design - NestSocks (Advanced Version) */
 
 /* Base Setup */
 body {
@@ -11,6 +11,7 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
+  overflow: hidden; /* Prevent body scroll */
 }
 
 /* Chat App Container */
@@ -23,17 +24,39 @@ body {
   display: flex;
   flex-direction: column;
   overflow: hidden;
+  transition: all 0.5s ease; /* Smooth resizing transition */
 }
 
 /* Header Section */
 .chat-header {
   background: #111827;
   color: white;
-  padding: 15px 20px;
+  padding: 20px;
   text-align: center;
   font-size: 1.4rem;
   font-weight: bold;
   border-bottom: 1px solid #374151;
+  position: relative;
+  transition: background-color 0.3s ease-in-out;
+}
+
+/* Add a "new message" notification effect */
+.chat-header.new-message {
+  background: #3b82f6;
+  animation: headerPulse 1.5s infinite;
+}
+
+/* Pulse animation for new messages */
+@keyframes headerPulse {
+  0% {
+    background-color: #3b82f6;
+  }
+  50% {
+    background-color: #2563eb;
+  }
+  100% {
+    background-color: #3b82f6;
+  }
 }
 
 /* Chat Body */
@@ -45,25 +68,39 @@ body {
   display: flex;
   flex-direction: column;
   gap: 15px;
+  transition: all 0.3s ease; /* Smooth scrolling transition */
 }
 
-/* Message Bubbles */
+/* Smooth message appearance */
 .chat-message {
   max-width: 70%;
   padding: 10px 15px;
   border-radius: 20px;
   color: white;
   font-size: 0.9rem;
+  opacity: 0;
+  animation: messageFadeIn 0.5s forwards;
+  transform: translateX(-10px);
 }
 
+@keyframes messageFadeIn {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* User and Friend messages */
 .chat-message.user {
   align-self: flex-end;
   background: linear-gradient(135deg, #3b82f6, #2563eb);
+  animation-delay: 0.2s;
 }
 
 .chat-message.friend {
   align-self: flex-start;
   background: linear-gradient(135deg, #f59e0b, #f97316);
+  animation-delay: 0.4s;
 }
 
 /* Footer Section */
@@ -74,8 +111,10 @@ body {
   gap: 10px;
   align-items: center;
   border-top: 1px solid #374151;
+  position: relative;
 }
 
+/* Focused input field with subtle animation */
 .chat-footer input {
   flex: 1;
   padding: 10px;
@@ -85,8 +124,16 @@ body {
   color: white;
   font-size: 0.9rem;
   outline: none;
+  transition: all 0.3s ease;
 }
 
+.chat-footer input:focus {
+  background: #3b82f6;
+  transform: scale(1.05);
+  box-shadow: 0 0 10px rgba(59, 130, 246, 0.6);
+}
+
+/* Buttons with hover and active effects */
 .chat-footer button {
   padding: 10px 15px;
   background: linear-gradient(135deg, #06b6d4, #3b82f6);
@@ -95,9 +142,34 @@ body {
   color: white;
   font-size: 0.9rem;
   cursor: pointer;
-  transition: background 0.3s ease;
+  transition: background 0.3s ease, transform 0.2s ease;
 }
 
 .chat-footer button:hover {
   background: linear-gradient(135deg, #2563eb, #1e3a8a);
+  transform: scale(1.1); /* Slight button enlarge effect */
+}
+
+.chat-footer button:active {
+  transform: scale(1.05); /* Slight shrink effect on click */
+}
+
+/* Smooth scroll for the body of chat */
+.chat-body::-webkit-scrollbar {
+  width: 8px;
+}
+
+.chat-body::-webkit-scrollbar-thumb {
+  background: #3b82f6;
+  border-radius: 10px;
+}
+
+.chat-body::-webkit-scrollbar-thumb:hover {
+  background: #2563eb;
+}
+
+/* Final touches */
+.chat-app:hover {
+  transform: scale(1.02); /* Slight zoom effect when hovering over the app */
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.6);
 }
