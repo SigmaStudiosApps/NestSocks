@@ -1,0 +1,18 @@
+.pulsar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #ff4500, #8b0000);
+  animation: pulsarEffect 4s ease-in-out infinite;
+}
+
+@keyframes pulsarEffect {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 20px #ff4500, 0 0 40px #8b0000;
+  }
+  50% {
+    transform: scale(1.5);
+    box-shadow: 0 0 40px #ff6347, 0 0 80px #ff4500;
+  }
+}
