@@ -1,0 +1,25 @@
+@keyframes cosmicExplosion {
+  0% {
+    box-shadow: 0 0 10px #f00, 0 0 20px #ff0;
+    transform: scale(0);
+    opacity: 1;
+  }
+  50% {
+    box-shadow: 0 0 50px #ff0, 0 0 100px #f90;
+    transform: scale(1.5);
+    opacity: 0.8;
+  }
+  100% {
+    box-shadow: 0 0 0px #f00, 0 0 0px #000;
+    transform: scale(0);
+    opacity: 0;
+  }
+}
+
+.cosmic-explosion {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #ff0, #f00);
+  animation: cosmicExplosion 3s infinite;
+}
