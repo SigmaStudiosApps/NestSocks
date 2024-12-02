@@ -1,0 +1,20 @@
+{
+  "name": "NestSocks",
+  "version": "1.0.0",
+  "description": "NestSocks is an Framework Offers wide ranges of Futuristic Modern Sleek Designs",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [
+    "nestsocks",
+    "css-framework",
+    "npm",
+    "design"
+  ],
+  "author": "Calestial Ashley",
+  "license": "MIT",
+  "dependencies": {
+    "nestsocks": "^1.0.0"
+  }
+}
